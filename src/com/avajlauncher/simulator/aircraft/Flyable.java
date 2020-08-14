@@ -1,6 +1,8 @@
 package com.avajlauncher.simulator.aircraft;
 
-interface Flyable {
+import com.avajlauncher.simulator.WeatherTower;
+
+public interface Flyable {
 
     public void updateConditions();
 
