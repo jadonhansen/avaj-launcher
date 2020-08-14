@@ -1,3 +1,5 @@
+package com.avajlauncher.simulator.aircraft;
+
 public class JetPlane extends Aircraft implements Flyable{
 
     private WeatherTower weatherTower;

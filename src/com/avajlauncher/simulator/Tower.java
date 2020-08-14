@@ -1,4 +1,6 @@
-import simulator.aircraft.Flyable
+package com.avajlauncher.simulator;
+
+import simulator.aircraft .s.Flyable;
 
 public abstract class Tower {
 

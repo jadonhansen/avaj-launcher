@@ -1,4 +1,4 @@
-import simulator.weather
+package com.avajlauncher.simulator;
 
 public class WeatherTower extends Tower {
 

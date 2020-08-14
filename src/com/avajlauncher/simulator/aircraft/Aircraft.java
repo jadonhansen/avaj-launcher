@@ -1,3 +1,5 @@
+package com.avajlauncher.simulator.aircraft;
+
 public abstract class Aircraft {
 
     protected long id;
