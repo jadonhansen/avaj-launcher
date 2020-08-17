@@ -1,6 +1,5 @@
 package com.avajlauncher.simulator.aircraft;
 
-import com.avajlauncher.simulator.WeatherTower;
 import com.avajlauncher.weather.Coordinates;
 
 public abstract class AircraftFactory {

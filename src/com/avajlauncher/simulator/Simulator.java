@@ -7,8 +7,13 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Simulator {
+
+    private static WeatherTower weatherTower;
+    private static List<Flyable> flyables = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -34,8 +39,14 @@ public class Simulator {
                     flyables.add(object);
                 }
 
-                while (simulations != 0) {
-                    simulations--;
+                weatherTower = new WeatherTower();
+
+                for (Flyable flyingObject : flyables) {
+                    flyingObject.registerTower(weatherTower);
+                }
+
+                for (int i = 0; i <= simulations; i++) {
+                    weatherTower.changeWeather();
                 }
             }
 

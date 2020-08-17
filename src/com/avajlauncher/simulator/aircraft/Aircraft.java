@@ -12,12 +12,10 @@ public abstract class Aircraft {
     protected Aircraft(String name, Coordinates coordinates) {
         this.name = name;
         this.coordinates = coordinates;
-
-        this.id = idCounter++;
-//        id must be set but is this correct???
+        this.id = nextId();
     }
 
     private long nextId() {
-        return idCounter + 1; //CORRECT????
+        return idCounter++;
     }
 }
