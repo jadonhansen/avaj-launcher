@@ -12,7 +12,6 @@ import java.util.List;
 
 public class Simulator {
 
-    private static WeatherTower weatherTower;
     private static List<Flyable> flyables = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -32,20 +31,20 @@ public class Simulator {
                 }
 
                 while ((line = reader.readLine()) != null) {
-                    System.out.println(line);
-                    Flyable object = AircraftFactory.newAircraft(line.split("")[0], line.split("")[1],
-                            Integer.parseInt(line.split("")[0]), Integer.parseInt(line.split("")[0]),
-                            Integer.parseInt(line.split("")[0]));
+                     System.out.println(line); //
+                    Flyable object = AircraftFactory.newAircraft(line.split(" ")[0], line.split(" ")[1],
+                            Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]),
+                            Integer.parseInt(line.split(" ")[4]));
                     flyables.add(object);
                 }
 
-                weatherTower = new WeatherTower();
+                WeatherTower weatherTower = new WeatherTower();
 
                 for (Flyable flyingObject : flyables) {
                     flyingObject.registerTower(weatherTower);
                 }
 
-                for (int i = 0; i <= simulations; i++) {
+                for (int i = 1; i <= simulations; i++) {
                     weatherTower.changeWeather();
                 }
             }

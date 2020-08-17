@@ -18,4 +18,28 @@ public abstract class Aircraft {
     private long nextId() {
         return idCounter++;
     }
+
+    protected void missionReport(String type, String conditions) {
+
+        switch (conditions) {
+            case "RAIN":
+                System.out.println(type + "#" + this.name + "(" + this.id +  "):" + " rain...");
+                break;
+            case "FOG":
+                System.out.println(type + "#" + this.name + "(" + this.id +  "):" + " fog...");
+                break;
+            case "SUN":
+                System.out.println(type + "#" + this.name + "(" + this.id +  "):" + " sun...");
+                break;
+            case "SNOW":
+                System.out.println(type + "#" + this.name + "(" + this.id +  "):" + " snow...");
+                break;
+            default:
+                System.out.println("Unidentified weather condition: '" + conditions + "'.");
+        }
+    }
+
+    protected void reportLanding(String type) {
+        System.out.println(type + "#" + this.name + "(" + this.id +  "):" + " Landing...");
+    }
 }
