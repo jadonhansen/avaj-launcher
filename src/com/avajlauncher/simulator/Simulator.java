@@ -54,6 +54,8 @@ public class Simulator {
             System.out.println("Unable to read from file argument: " + args[0]);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Please provide a file argument!");
+        } catch (NumberFormatException e) {
+            System.out.println("One of the coordinates has not been typed correctly.\nPlease ensure all coordinates are numbers only.");
         }
     }
 }
