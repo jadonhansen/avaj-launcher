@@ -56,7 +56,7 @@ public class Balloon extends Aircraft implements Flyable {
     }
 
     public void registerTower(WeatherTower weatherTower) {
-        System.out.println("Tower says: Balloon#" + this.name + "(" + this.id + ")" + " registered to weather tower");
+        this.saveReport("Tower says: Balloon#" + this.name + "(" + this.id + ")" + " registered to weather tower\n");
         this.weatherTower = weatherTower;
         this.weatherTower.register(this);
     }

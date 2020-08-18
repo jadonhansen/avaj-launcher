@@ -31,7 +31,6 @@ public class Simulator {
                 }
 
                 while ((line = reader.readLine()) != null) {
-                     System.out.println(line); //
                     Flyable object = AircraftFactory.newAircraft(line.split(" ")[0], line.split(" ")[1],
                             Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]),
                             Integer.parseInt(line.split(" ")[4]));

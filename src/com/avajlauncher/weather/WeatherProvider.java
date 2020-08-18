@@ -17,26 +17,138 @@ public class WeatherProvider {
         int latitude = coordinates.getLatitude();
         int height = coordinates.getHeight();
 
-        if (height <= 20) {
-                return weather[2];
-        } else if (height <= 40) {
+        if (height <= 10) {
+            if (longitude <= 20) {
 
-            if (longitude <= 25) {
-                if (latitude <= 25) {
-                    return weather[0];
+                if (latitude <= 30) {
+                    return weather[2];
                 } else {
-                    return weather[3];
+                    return weather[1];
                 }
+
+            } else if (longitude <= 60) {
+
+                if (latitude <= 30) {
+                    return weather[1];
+                } else {
+                    return weather[0];
+                }
+
             } else {
-                if (latitude <= 25) {
+
+                if (latitude <= 30) {
                     return weather[3];
                 } else {
                     return weather[0];
                 }
-            }
 
+            }
+        } else if (height <= 20) {
+            if (longitude <= 20) {
+
+                if (latitude <= 30) {
+                    return weather[2];
+                } else {
+                    return weather[0];
+                }
+
+            } else if (longitude <= 60) {
+
+                if (latitude <= 30) {
+                    return weather[3];
+                } else {
+                    return weather[2];
+                }
+
+            } else {
+
+                if (latitude <= 30) {
+                    return weather[2];
+                } else {
+                    return weather[0];
+                }
+
+            }
+        } else if (height <= 30) {
+            if (longitude <= 20) {
+
+                if (latitude <= 30) {
+                    return weather[1];
+                } else {
+                    return weather[2];
+                }
+
+            } else if (longitude <= 60) {
+
+                if (latitude <= 30) {
+                    return weather[0];
+                } else {
+                    return weather[2];
+                }
+
+            } else {
+
+                if (latitude <= 30) {
+                    return weather[3];
+                } else {
+                    return weather[2];
+                }
+
+            }
+        } else if (height <= 40) {
+            if (longitude <= 20) {
+
+                if (latitude <= 30) {
+                    return weather[0];
+                } else {
+                    return weather[1];
+                }
+
+            } else if (longitude <= 60) {
+
+                if (latitude <= 30) {
+                    return weather[3];
+                } else {
+                    return weather[0];
+                }
+
+            } else {
+
+                if (latitude <= 30) {
+                    return weather[1];
+                } else {
+                    return weather[3];
+                }
+
+            }
+        } else if (height <= 50) {
+            if (longitude <= 20) {
+
+                if (latitude <= 30) {
+                    return weather[0];
+                } else {
+                    return weather[3];
+                }
+
+            } else if (longitude <= 60) {
+
+                if (latitude <= 30) {
+                    return weather[0];
+                } else {
+                    return weather[3];
+                }
+
+            } else {
+
+                if (latitude <= 30) {
+                    return weather[0];
+                } else {
+                    return weather[3];
+                }
+
+            }
         } else {
-            return weather[1];
+            return weather [3];
         }
     }
 }
