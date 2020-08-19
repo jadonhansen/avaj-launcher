@@ -30,11 +30,15 @@ public class Simulator {
                     System.exit(0);
                 }
 
-                while ((line = reader.readLine()) != null) {
-                    Flyable object = AircraftFactory.newAircraft(line.split(" ")[0], line.split(" ")[1],
-                            Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]),
-                            Integer.parseInt(line.split(" ")[4]));
-                    flyables.add(object);
+                try {
+                    while ((line = reader.readLine()) != null) {
+                        Flyable object = AircraftFactory.newAircraft(line.split(" ")[0], line.split(" ")[1],
+                                Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]),
+                                Integer.parseInt(line.split(" ")[4]));
+                        flyables.add(object);
+                    }
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    System.out.println("You are missing a coordinate parameter!");
                 }
 
                 WeatherTower weatherTower = new WeatherTower();
