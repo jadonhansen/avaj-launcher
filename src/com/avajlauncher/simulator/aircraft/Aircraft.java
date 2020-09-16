@@ -25,7 +25,20 @@ public abstract class Aircraft {
 
     // will create a new file only if it doesn't already exist
     protected void saveReport(String entry) {
-
+        try {
+            File record = new File("simulation.txt");
+            if (record.createNewFile()) {
+                FileWriter fw = new FileWriter("simulation.txt");
+                fw.write(entry);
+                fw.close();
+            } else {
+                FileWriter fw = new FileWriter("simulation.txt", true);
+                fw.write(entry);
+                fw.close();
+            }
+        } catch (IOException e) {
+            System.out.print("Error while creating simulation.txt: " + e);
+        }
         try {
             File record = new File("simulation.txt");
             if (record.createNewFile()) {
